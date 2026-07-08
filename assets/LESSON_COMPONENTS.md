@@ -22,7 +22,7 @@ Reference documents in `reference/` are compressed quick-reference sheets, not l
 <link rel="stylesheet" href="../assets/reference.css">
 ```
 
-`reference.css` is scoped entirely under `.reference-page`, so it restyles reference sheets (polished tables, quiet muted section labels, white/stone surfaces, one subtle amber study note) without touching the lesson system. Use `<main class="page reference-page">` with `.ref-head`/`.ref-eyebrow`/`.ref-lede`/`.ref-note`, `.ref-section` cards with an `<h2>` rule, and `.ref-table-wrap` + `<table class="ref-table">` for tables (styled header, row dividers, horizontal overflow safety). Reserve emerald for real clickable actions; `.primary-button.secondary` is fine for navigation like "return to lesson".
+`reference.css` is scoped entirely under `.reference-page`, so it restyles reference sheets (polished tables, quiet muted section labels, white/stone surfaces, one subtle amber study note) without touching the lesson system. Use `<main class="page reference-page">` with `.ref-head`/`.ref-eyebrow`/`.ref-lede`/`.ref-note`, `.ref-section` cards with an `<h2>` rule, and `.ref-table-wrap` + `<table class="ref-table">` for tables (styled header, row dividers, horizontal overflow safety). Reserve primary blue for real clickable actions; `.primary-button.secondary` is fine for navigation like "return to lesson".
 
 ## Component contract
 
@@ -33,7 +33,7 @@ Reference documents in `reference/` are compressed quick-reference sheets, not l
 | Section label | `.eyebrow` | Muted text/rule label near body size. Do **not** use pill/bubble chrome for non-clickable titles. |
 | Section card | `.lesson-block` | Main teaching blocks before the quiz. |
 | Read-first cue | `.read-card.step-cue` with `.step-row`, `.step-dot`, `.step-label` | Amber support card for exam constraints or "read before answering" guidance. |
-| Primary action | `.primary-button` | Primary green is for the main CTA and quiz highlighted states only. |
+| Primary action | `.primary-button` | Primary blue is for the main CTA and quiz highlighted states only. |
 | Secondary action | `.primary-button.secondary` | Stone/white pill chrome is for clickable secondary buttons only. |
 | CFR citation chip | `<code>` | Quiet stone chip; keep citations together with nowrap. |
 | Route cards | `.route-steps` | Four-step map cards: Title, Chapter, Part, Section. |
@@ -46,7 +46,7 @@ Reference documents in `reference/` are compressed quick-reference sheets, not l
 ## Color rules
 
 - White/stone: base surfaces, section labels, headings, neutral text, citations.
-- Primary green/emerald: primary CTA, quiz option hover/focus, correct answer states.
+- Primary blue (Site Training Blue `#1E73BE` / hover `#155A96`): primary CTA, quiz option hover/focus, correct answer states.
 - Amber: learning-support/read-first cards and route/example/memory support cards.
 - Do not use pill/bubble styling for static titles like `Worked example` or `What you are learning`.
 

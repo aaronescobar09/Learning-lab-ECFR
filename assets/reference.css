@@ -2,7 +2,7 @@
    Loaded AFTER ../assets/style.css and scoped entirely under .reference-page,
    so it restyles quick-reference documents (polished tables, quiet section
    labels, white/stone surfaces, one subtle amber study note) WITHOUT touching
-   the approved lesson visual system. Reuses the stone/emerald/amber tokens
+   the approved lesson visual system. Reuses the stone/primary-blue/amber tokens
    already declared on :root in style.css. */
 
 .reference-page {
