@@ -56,3 +56,8 @@ reference/title-19-navigation-map.html
 6. Create a clean HTML lesson with immediate-feedback quiz behavior.
 7. Visually verify the quiz in a browser or screenshot, not just by reading files.
 8. Commit the finished quiz as a local savepoint.
+
+## Course-owner feedback
+
+- 2026-07-08: A lesson file must contain real teaching before the quiz. A quiz-only page is not enough for `/teach`; use lesson first, quiz second.
+

@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lesson 0001 - Title 19 Navigation Quiz</title>
+  <title>Lesson 0001 - Title 19 Navigation</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
   <main>
     <section class="hero">
       <p class="eyebrow">Lesson 0001</p>
-      <h1>Title 19 Navigation Quiz</h1>
-      <p class="muted">A short retrieval-practice quiz for GTC certification students learning how to read CFR structure and recognize key Title 19 parts.</p>
+      <h1>Title 19 Navigation Lesson</h1>
+      <p class="muted">Learn the map first, then test recall. This lesson teaches GTC certification students how to read CFR structure and recognize key Title 19 parts.</p>
       <div class="warning"><strong>Exam constraint:</strong> use eCFR during study to learn the map. Do not train yourself to depend on live eCFR search during the exam.</div>
       <div class="button-row">
         <a class="primary-button" href="../reference/title-19-navigation-map.html">Open the reference map</a>
@@ -19,19 +19,58 @@
       </div>
     </section>
 
-    <section class="grid" aria-label="Mental map">
-      <div class="card"><strong>1. Title</strong><span>Title 19 means Customs Duties.</span></div>
-      <div class="card"><strong>2. Chapter</strong><span>Chapter I is the CBP/Treasury chapter students will see often.</span></div>
-      <div class="card"><strong>3. Part</strong><span>Part numbers are topic buckets, such as 111 for Customs Brokers.</span></div>
+    <section class="lesson-block">
+      <p class="eyebrow">What you are learning</p>
+      <h2>The CFR is a map, not a pile of rules</h2>
+      <p>Exam questions often ask where a topic lives. The winning move is to identify the level of the map before hunting for the exact words.</p>
+      <div class="route-steps" aria-label="CFR navigation route">
+        <div><strong>Title</strong><span>Broad subject. <code>Title 19</code> means Customs Duties.</span></div>
+        <div><strong>Chapter</strong><span>Agency home. <code>Chapter I</code> is the CBP/Treasury chapter students see often.</span></div>
+        <div><strong>Part</strong><span>Topic bucket. <code>Part 111</code> is Customs Brokers.</span></div>
+        <div><strong>Section</strong><span>Specific rule inside a part. <code>11.1</code> is one section in Part 11.</span></div>
+      </div>
     </section>
 
-    <section>
-      <h2>How to read a citation</h2>
-      <p>Read <code>19 CFR 111.28(b)</code> as: <strong>Title 19</strong>, <strong>Part 111</strong>, <strong>Section 28</strong>, <strong>paragraph b</strong>. The quiz asks you to retrieve that structure before checking feedback.</p>
+    <section class="lesson-block">
+      <p class="eyebrow">Worked example</p>
+      <h2>Read <code>19 CFR 111.28(b)</code> without guessing</h2>
+      <div class="example-grid">
+        <div><strong>19</strong><span>Title 19, Customs Duties</span></div>
+        <div><strong>CFR</strong><span>Code of Federal Regulations</span></div>
+        <div><strong>111</strong><span>Part 111, Customs Brokers</span></div>
+        <div><strong>.28</strong><span>Section 28 inside Part 111</span></div>
+        <div><strong>(b)</strong><span>Paragraph b inside the section</span></div>
+      </div>
+      <p>The exam habit is simple: say the levels out loud in order. <strong>Title, Part, Section, Paragraph.</strong> That keeps you from treating every number as the same kind of number.</p>
+    </section>
+
+    <section class="lesson-block">
+      <p class="eyebrow">Memory hooks</p>
+      <h2>Parts to recognize in Quiz 1</h2>
+      <div class="memory-grid">
+        <div><strong>Part 111</strong><span>Customs Brokers</span></div>
+        <div><strong>Part 190</strong><span>Modernized Drawback</span></div>
+        <div><strong>Part 141</strong><span>Entry of Merchandise</span></div>
+        <div><strong>Part 142</strong><span>Entry Process</span></div>
+        <div><strong>Part 145</strong><span>Mail Importations</span></div>
+        <div><strong>Part 11</strong><span>Packing, stamping, marking</span></div>
+      </div>
+      <p class="muted">Do not memorize these as trivia only. Tie each part number to its topic bucket so you can eliminate bad answer choices under exam pressure.</p>
+    </section>
+
+    <section class="lesson-block">
+      <p class="eyebrow">Study method</p>
+      <h2>How to use this page</h2>
+      <ol class="compact-list">
+        <li>Read the map above once.</li>
+        <li>Cover the memory hooks and say the part numbers back from memory.</li>
+        <li>Take the quiz without using eCFR.</li>
+        <li>Use feedback to repair misses, then retry later for storage strength.</li>
+      </ol>
     </section>
 
     <section class="quiz-shell">
-      <h2>Quiz</h2>
+      <h2>Practice quiz</h2>
       <p>Answer from memory first. After each choice, the feedback explains the navigation cue and the official-source basis.</p>
       <div id="quiz-root"></div>
     </section>
