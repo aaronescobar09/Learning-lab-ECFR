@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 0001 - Title 19 Navigation Quiz</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Lesson 0001</p>
+      <h1>Title 19 Navigation Quiz</h1>
+      <p class="muted">A short retrieval-practice quiz for GTC certification students learning how to read CFR structure and recognize key Title 19 parts.</p>
+      <div class="warning"><strong>Exam constraint:</strong> use eCFR during study to learn the map. Do not train yourself to depend on live eCFR search during the exam.</div>
+      <div class="button-row">
+        <a class="primary-button" href="../reference/title-19-navigation-map.html">Open the reference map</a>
+        <a class="primary-button secondary" href="https://www.ecfr.gov/current/title-19">Official eCFR Title 19</a>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Mental map">
+      <div class="card"><strong>1. Title</strong><span>Title 19 means Customs Duties.</span></div>
+      <div class="card"><strong>2. Chapter</strong><span>Chapter I is the CBP/Treasury chapter students will see often.</span></div>
+      <div class="card"><strong>3. Part</strong><span>Part numbers are topic buckets, such as 111 for Customs Brokers.</span></div>
+    </section>
+
+    <section>
+      <h2>How to read a citation</h2>
+      <p>Read <code>19 CFR 111.28(b)</code> as: <strong>Title 19</strong>, <strong>Part 111</strong>, <strong>Section 28</strong>, <strong>paragraph b</strong>. The quiz asks you to retrieve that structure before checking feedback.</p>
+    </section>
+
+    <section class="quiz-shell">
+      <h2>Quiz</h2>
+      <p>Answer from memory first. After each choice, the feedback explains the navigation cue and the official-source basis.</p>
+      <div id="quiz-root"></div>
+    </section>
+
+    <section class="source-note">
+      <h2>Sources and scope</h2>
+      <p>This lesson is for study and certification prep. It is not legal advice.</p>
+      <p>Primary source: <a href="https://www.ecfr.gov/current/title-19">eCFR Title 19 - Customs Duties</a>. Structure verified with the eCFR Title 19 structure API on 2026-07-08 05:51:18 UTC. Section 11.1 verified with the eCFR enhanced renderer.</p>
+      <p>Ask your instructor or the agent a follow-up if a citation pattern, part label, or exam constraint is unclear.</p>
+    </section>
+  </main>
+
+  <script>
+    window.quizData = {
+  "title": "Title 19 Navigation Quiz 1",
+  "description": "Practice reading CFR structure and recognizing high-value Title 19 parts.",
+  "retrieved": "2026-07-08 05:51:18 UTC",
+  "questions": [
+    {
+      "prompt": "Which Title contains Customs Duties?",
+      "choices": [
+        "Title 16",
+        "Title 17",
+        "Title 18",
+        "Title 19"
+      ],
+      "answer": 3,
+      "feedback": "Title 19 is labeled Customs Duties in the current eCFR. Start every citation by identifying the Title first.",
+      "evidence": "eCFR Title 19 structure API: identifier 19, label Customs Duties."
+    },
+    {
+      "prompt": "Which Chapter is the main CBP/Treasury chapter in Title 19?",
+      "choices": [
+        "Chapter I",
+        "Chapter II",
+        "Chapter III",
+        "Chapter IV"
+      ],
+      "answer": 0,
+      "feedback": "Chapter I is U.S. Customs and Border Protection, Department of Homeland Security; Department of the Treasury. That is the main customs chapter for these navigation questions.",
+      "evidence": "eCFR Title 19 structure API: Chapter I label."
+    },
+    {
+      "prompt": "In 19 CFR 111.28(b), what does 111 identify?",
+      "choices": [
+        "Title 19",
+        "Part 111",
+        "Section 28",
+        "Paragraph b"
+      ],
+      "answer": 1,
+      "feedback": "Read the pattern as Title CFR Part.Section(paragraph). In 19 CFR 111.28(b), 111 is the Part, 28 is the Section, and b is the paragraph.",
+      "evidence": "CFR citation format preserved in source input and used in eCFR section paths."
+    },
+    {
+      "prompt": "Drawback is addressed in which CFR part?",
+      "choices": [
+        "Part 190",
+        "Part 172",
+        "Part 171",
+        "Part 159"
+      ],
+      "answer": 0,
+      "feedback": "Part 190 is labeled Modernized Drawback. The other options are nearby penalty, claim, and liquidation topics.",
+      "evidence": "eCFR Title 19 structure API: Part 190 - Modernized Drawback."
+    },
+    {
+      "prompt": "Customs Broker licensing belongs in which CFR part?",
+      "choices": [
+        "Part 111",
+        "Part 113",
+        "Part 185",
+        "Part 198"
+      ],
+      "answer": 0,
+      "feedback": "Part 111 is labeled Customs Brokers. If the question says broker licensing or broker regulations, think Part 111 first.",
+      "evidence": "eCFR Title 19 structure API: Part 111 - Customs Brokers."
+    },
+    {
+      "prompt": "Which section covers cigars, cigarettes, medicinal preparations, and perfumery?",
+      "choices": [
+        "19 CFR 11.1",
+        "19 CFR 11.12a",
+        "19 CFR 11.12b",
+        "19 CFR 11.13"
+      ],
+      "answer": 0,
+      "feedback": "19 CFR 11.1 is headed Cigars, cigarettes, medicinal preparations, and perfumery. This is the official-section version of the sample Part 11.1 question.",
+      "evidence": "eCFR renderer: section 11.1 heading."
+    },
+    {
+      "prompt": "Entry of Merchandise is addressed in which CFR part?",
+      "choices": [
+        "Part 141",
+        "Part 142",
+        "Part 145",
+        "Part 159"
+      ],
+      "answer": 0,
+      "feedback": "Part 141 is labeled Entry of Merchandise. Pair it mentally with Part 142, Entry Process.",
+      "evidence": "eCFR Title 19 structure API: Part 141 - Entry of Merchandise."
+    },
+    {
+      "prompt": "Entry Process is addressed in which CFR part?",
+      "choices": [
+        "Part 142",
+        "Part 141",
+        "Part 145",
+        "Part 190"
+      ],
+      "answer": 0,
+      "feedback": "Part 142 is labeled Entry Process. It sits next to Part 141, Entry of Merchandise, so students should learn them as a pair.",
+      "evidence": "eCFR Title 19 structure API: Part 142 - Entry Process."
+    },
+    {
+      "prompt": "Mail Importations are addressed in which CFR part?",
+      "choices": [
+        "Part 145",
+        "Part 141",
+        "Part 142",
+        "Part 111"
+      ],
+      "answer": 0,
+      "feedback": "Part 145 is labeled Mail Importations. The part number itself is the recall target here.",
+      "evidence": "eCFR Title 19 structure API: Part 145 - Mail Importations."
+    },
+    {
+      "prompt": "Which source should verify current Title 19 structure during study?",
+      "choices": [
+        "eCFR current",
+        "GTC notes",
+        "AI summary",
+        "Class slides"
+      ],
+      "answer": 0,
+      "feedback": "Use the current eCFR as the official source during study. GTC notes and AI summaries can help, but the answer key should trace back to government-source text.",
+      "evidence": "Mission and resources require official government-source grounding, especially current eCFR."
+    }
+  ]
+};
+  </script>
+  <script src="../assets/quiz.js"></script>
+</body>
+</html>

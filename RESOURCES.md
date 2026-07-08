@@ -2,7 +2,7 @@
 
 ## Knowledge
 
-- [eCFR Title 19 — Customs Duties](https://www.ecfr.gov/current/title-19)
+- [eCFR Title 19 - Customs Duties](https://www.ecfr.gov/current/title-19)
   Official current eCFR page for Title 19. Use for source-of-truth navigation, chapter/part/section context, and student-facing source links.
 
 - [eCFR Title 19 structure API](https://www.ecfr.gov/api/versioner/v1/structure/current/title-19.json)
