@@ -60,4 +60,5 @@ reference/title-19-navigation-map.html
 ## Course-owner feedback
 
 - 2026-07-08: A lesson file must contain real teaching before the quiz. A quiz-only page is not enough for `/teach`; use lesson first, quiz second.
+- 2026-07-08: The approved lesson visual system lives in `assets/style.css`; future real lessons should link `../assets/style.css` and `../assets/quiz.js`, follow `assets/LESSON_COMPONENTS.md`, and avoid archive/versioned style assets unless explicitly making a preview/archive page. Old preview HTML belongs in `lessons/archive/`; old style assets belong in `assets/archive/`.
 

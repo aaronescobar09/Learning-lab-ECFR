@@ -1,0 +1,325 @@
+/* assets-v6: Style experiment V6 "Printable Workbook" for Lesson 0001 previews.
+   Print-first instructor handout: monochrome worksheet rules, checkbox answer
+   choices, a name-and-date line, and strong print styling. Same lesson HTML
+   and shared ../assets/quiz.js behavior; only this stylesheet differs.
+   Baseline production styles live in ../assets/style.css and are not affected. */
+
+:root {
+  --ink: #151515;
+  --muted: #494949;
+  --accent: #0e5f55;
+  --accent-soft: #eef6f4;
+  --rule: #151515;
+  --hairline: #8c8c8c;
+  --dotted: #a5a5a5;
+  --good: #1b6b3a;
+  --good-soft: #edf6ef;
+  --bad: #8f1d1d;
+  --bad-soft: #faf0ef;
+  --warn-border: #8a5a00;
+  --warn-soft: #fbf6e8;
+  --ui-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.62;
+}
+
+main, .page {
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 30px 0 64px;
+}
+
+/* Worksheet header block with a fill-in name and date line. */
+.hero {
+  background: #ffffff;
+  border: 2.5px solid var(--rule);
+  border-radius: 0;
+  padding: 24px 26px 16px;
+  margin-bottom: 26px;
+}
+.hero::after {
+  content: "Name: ______________________________        Date: ______________";
+  display: block;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px dotted var(--dotted);
+  font-family: var(--ui-font);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: #333333;
+  white-space: pre-wrap;
+}
+
+/* Stamp-style label in the header; plain caps labels inside sections. */
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 12px;
+  border: 1.5px solid var(--rule);
+  padding: 3px 10px;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: var(--ui-font);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.lesson-block .eyebrow { border: 0; padding: 0; color: var(--accent); letter-spacing: 0.18em; }
+
+h1, h2, h3 { line-height: 1.2; margin: 0 0 12px; }
+h1 { font-size: clamp(1.8rem, 4.2vw, 2.4rem); font-weight: 700; }
+h2 {
+  font-family: var(--ui-font);
+  font-size: 1.02rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 3px double var(--rule);
+  padding-bottom: 7px;
+  margin-top: 2px;
+}
+h2 code { text-transform: none; letter-spacing: normal; }
+h3 {
+  font-family: var(--ui-font);
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+p { margin: 0 0 13px; }
+a { color: var(--accent); }
+a:focus-visible, .primary-button:focus-visible, .option:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Typewriter citations, no chrome. */
+code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.93em;
+  font-weight: 700;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+.card { background: #ffffff; border: 1px solid var(--hairline); padding: 14px; }
+.card strong { display: block; margin-bottom: 6px; }
+.muted { color: var(--muted); }
+
+.warning {
+  background: var(--warn-soft);
+  border: 2px dashed var(--warn-border);
+  border-radius: 0;
+  padding: 12px 15px;
+  margin: 16px 0;
+}
+
+/* Handout sections divided by heavy rules, no cards. */
+.lesson-block {
+  background: transparent;
+  border: 0;
+  border-top: 2px solid var(--rule);
+  border-radius: 0;
+  padding: 18px 0 4px;
+  margin: 22px 0;
+  box-shadow: none;
+}
+
+.route-steps, .example-grid, .memory-grid { display: grid; gap: 8px; margin: 16px 0; }
+.route-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); counter-reset: step; }
+.example-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.memory-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.route-steps div, .example-grid div, .memory-grid div {
+  background: #ffffff;
+  border: 1px solid var(--hairline);
+  border-radius: 0;
+  padding: 11px 13px;
+}
+.route-steps div::before {
+  counter-increment: step;
+  content: "Step " counter(step);
+  display: block;
+  font-family: var(--ui-font);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+.route-steps strong, .example-grid strong, .memory-grid strong { display: block; margin-bottom: 4px; }
+.route-steps span, .example-grid span, .memory-grid span { color: var(--muted); font-size: 0.93rem; }
+
+.compact-list { margin: 0; padding-left: 1.35rem; }
+.compact-list li + li { margin-top: 6px; }
+.compact-list li::marker { font-weight: 700; }
+
+.quiz-shell { margin-top: 26px; border-top: 2px solid var(--rule); padding-top: 18px; }
+
+.quiz-card {
+  background: #ffffff;
+  border: 1.5px solid #444444;
+  border-radius: 0;
+  padding: 16px 18px;
+  margin: 14px 0;
+  box-shadow: none;
+}
+.quiz-card fieldset { border: 0; padding: 0; margin: 0; }
+.quiz-card legend { font-weight: 700; font-size: 1.04rem; margin-bottom: 10px; }
+.quiz-meta {
+  font-family: var(--ui-font);
+  color: #555555;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* Worksheet multiple choice: lettered checkbox rows. */
+.options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  counter-reset: choice;
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px dotted var(--dotted);
+  border-radius: 0;
+  padding: 9px 6px;
+  color: var(--ink);
+  font: 600 0.98rem Georgia, "Times New Roman", serif;
+  text-align: left;
+  cursor: pointer;
+}
+.option::before {
+  counter-increment: choice;
+  content: counter(choice, upper-alpha);
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border: 1.5px solid var(--rule);
+  background: #ffffff;
+  font-family: var(--ui-font);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.option:hover, .option:focus-visible { background: var(--accent-soft); }
+.option.correct { background: var(--good-soft); color: var(--good); font-weight: 700; }
+.option.correct::before { background: var(--good); border-color: var(--good); color: #ffffff; }
+.option.incorrect { background: var(--bad-soft); color: var(--bad); }
+.option.incorrect::before { background: var(--bad); border-color: var(--bad); color: #ffffff; }
+.option:disabled { cursor: default; }
+
+.feedback {
+  display: none;
+  margin-top: 10px;
+  background: #f6f8f7;
+  border: 1px solid var(--hairline);
+  border-left: 4px solid var(--accent);
+  border-radius: 0;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+}
+.feedback.show { display: block; }
+.feedback.good { border-left-color: var(--good); }
+.feedback.bad { border-left-color: var(--bad); }
+.feedback .label {
+  font-family: var(--ui-font);
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+/* Score box drawn like a worksheet total line. */
+.quiz-summary {
+  background: #ffffff;
+  border: 2px dashed #666666;
+  border-radius: 0;
+  padding: 13px 16px;
+  margin: 14px 0;
+  font-family: var(--ui-font);
+  font-size: 0.88rem;
+}
+
+.button-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.primary-button {
+  display: inline-block;
+  background: #ffffff;
+  color: var(--ink);
+  border: 1.5px solid var(--rule);
+  border-radius: 0;
+  padding: 9px 14px;
+  font-family: var(--ui-font);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+.primary-button:hover { background: #f0f0f0; }
+.primary-button.secondary { color: #555555; border-color: #777777; }
+
+.source-note {
+  background: transparent;
+  border: 0;
+  border-top: 2px solid var(--rule);
+  border-radius: 0;
+  padding: 16px 0 0;
+  margin-top: 28px;
+  font-size: 0.9rem;
+  box-shadow: none;
+}
+.print-only { display: none; }
+
+@media (max-width: 860px) {
+  .route-steps, .example-grid, .memory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  main, .page { width: min(100% - 20px, 760px); padding-top: 18px; }
+  .hero { padding: 18px 16px 12px; }
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* The point of this variant: it should photocopy well. */
+@media print {
+  main, .page { width: 100%; padding: 0 0 20px; }
+  .lesson-block, .quiz-card { break-inside: avoid; page-break-inside: avoid; }
+  h2 { page-break-after: avoid; }
+  .option { border-bottom-color: #777777; }
+  .quiz-summary { border-color: #333333; }
+  .source-note a::after { content: " (" attr(href) ")"; font-size: 0.85em; }
+  .button-row, .no-print { display: none !important; }
+  .print-only { display: block; }
+}

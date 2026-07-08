@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Local environment / secrets
+.env
+.env.*
+*.pem
+*.p12
+*.pfx
+
+# Editor / transient files
+*.swp
+*.tmp
+.cache/
+
+# Local servers / generated screenshots
+*.log

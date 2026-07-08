@@ -1,8 +1,9 @@
-/* Shared lesson UI for this teach workspace.
-   Shadcn-style white/stone base, muted text/rules for section labels,
-   primary green only for highlighted buttons and quiz states, and amber
-   for learning-support cards. Lessons link this file from ../assets/style.css
-   and use ../assets/quiz.js for behavior. */
+/* assets-v4: Style experiment V4 "Exam-Cram Trainer" for Lesson 0001 previews.
+   S1 Amber + R2 step marker direction: shadcn-style white and stone base,
+   muted text/rules for section labels, primary green only for highlighted buttons,
+   and amber for learning-support cards. Same lesson HTML and shared
+   ../assets/quiz.js behavior; only this stylesheet differs. Baseline
+   production styles live in ../assets/style.css and are not affected. */
 
 :root {
   color-scheme: light;
