@@ -10,6 +10,18 @@
     return node;
   }
 
+  function shuffledChoices(question) {
+    const choices = question.choices.map((label, originalIndex) => ({
+      label,
+      correct: originalIndex === question.answer
+    }));
+    for (let i = choices.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [choices[i], choices[j]] = [choices[j], choices[i]];
+    }
+    return choices;
+  }
+
   function renderQuiz(root, data) {
     let answered = 0;
     let score = 0;
@@ -38,18 +50,19 @@
       const feedback = el('div', { className: 'feedback', 'aria-live': 'polite' });
       let isAnswered = false;
 
-      q.choices.forEach((choice, choiceIndex) => {
-        const button = el('button', { className: 'option', type: 'button', textContent: choice });
+      shuffledChoices(q).forEach((choice) => {
+        const button = el('button', { className: 'option', type: 'button', textContent: choice.label });
+        button.quizCorrect = choice.correct;
         button.addEventListener('click', () => {
           if (isAnswered) return;
           isAnswered = true;
           answered += 1;
-          const correct = choiceIndex === q.answer;
+          const correct = button.quizCorrect;
           if (correct) score += 1;
-          Array.from(options.children).forEach((btn, i) => {
+          Array.from(options.children).forEach((btn) => {
             btn.disabled = true;
-            if (i === q.answer) btn.classList.add('correct');
-            if (i === choiceIndex && i !== q.answer) btn.classList.add('incorrect');
+            if (btn.quizCorrect) btn.classList.add('correct');
+            if (btn === button && !btn.quizCorrect) btn.classList.add('incorrect');
           });
           feedback.classList.add('show', correct ? 'good' : 'bad');
           feedback.innerHTML = `

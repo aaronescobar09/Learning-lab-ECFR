@@ -36,6 +36,7 @@ Reference documents in `reference/` are compressed quick-reference sheets, not l
 | Primary action | `.primary-button` | Primary blue is for the main CTA and quiz highlighted states only. |
 | Secondary action | `.primary-button.secondary` | Stone/white pill chrome is for clickable secondary buttons only. |
 | CFR citation chip | `<code>` | Quiet stone chip; keep citations together with nowrap. |
+| Annotated lesson image | `.lesson-figure` with `<picture>` | Use separate desktop/mobile assets when annotations would become unreadable on a phone. For interface orientation, prefer a cropped capture of the real official interface with browser chrome and unrelated tabs removed. Add useful alt text and a source-aware caption. |
 | Route cards | `.route-steps` | Four-step map cards: Title, Chapter, Part, Section. |
 | Worked example cards | `.example-grid` | Small amber support cards for breaking down citations. |
 | Memory cards | `.memory-grid` | Small amber support cards for recall targets. |
@@ -56,6 +57,8 @@ Reference documents in `reference/` are compressed quick-reference sheets, not l
 2. Link `../assets/style.css` and `../assets/quiz.js`.
 3. Teach before the quiz: learning goal, worked example, memory/retrieval support, then quiz.
 4. Keep answer choices similarly shaped so formatting does not reveal the answer.
-5. Cite official/government source material for factual claims.
-6. Run `python3 scripts/check-lesson-components.py` before sharing or committing.
-7. Visually inspect at least one screenshot; layout issues are product bugs, not vibes.
+5. Do not preview exact quiz answers in pre-quiz teaching. Teach the transferable method with a separate example, then reveal answer-specific explanations only after a response.
+6. Use the shared quiz renderer's shuffled choice order rather than keeping correct answers in a predictable position.
+7. Cite official/government source material for factual claims.
+8. Run `python3 scripts/check-lesson-components.py` before sharing or committing.
+9. Visually inspect desktop and mobile screenshots when a lesson contains annotated imagery.

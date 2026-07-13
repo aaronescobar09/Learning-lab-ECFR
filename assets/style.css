@@ -208,6 +208,23 @@ code {
 .route-steps strong, .example-grid strong, .memory-grid strong { display: block; margin-bottom: 4px; }
 .route-steps span, .example-grid span, .memory-grid span { color: var(--stone-600); font-size: 0.95rem; }
 
+/* Responsive lesson imagery: separate desktop and mobile assets keep annotation text readable. */
+.lesson-figure {
+  background: var(--stone-50);
+  border: 1.5px solid var(--stone-200);
+  border-radius: 16px;
+  margin: 20px 0 4px;
+  padding: 12px;
+}
+.lesson-figure picture, .lesson-figure img { display: block; width: 100%; }
+.lesson-figure img { height: auto; border-radius: 12px; }
+.lesson-figure figcaption {
+  color: var(--stone-600);
+  font-size: 0.9rem;
+  margin-top: 10px;
+  padding: 0 4px 2px;
+}
+
 .compact-list { margin: 0; padding-left: 1.35rem; font-weight: 650; }
 .compact-list li + li { margin-top: 7px; }
 .compact-list li::marker { color: var(--amber-700); font-weight: 900; }
@@ -337,6 +354,7 @@ code {
   .read-card, .warning { background: #ffffff; color: var(--stone-900); border-color: #999; }
   .option { box-shadow: none; border: 1px solid #999; }
   .route-steps div, .example-grid div, .memory-grid div { box-shadow: none; border: 1px solid #999; background: #ffffff; }
+  .lesson-figure { background: #ffffff; border-color: #999; break-inside: avoid; }
   h1 { background: none; }
   code { background: #ffffff; border-color: #999; }
   .button-row, .no-print { display: none !important; }
